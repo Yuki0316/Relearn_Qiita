@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:relearn_qiita_client/ui_components/long_button.dart';
 
+import 'bottom_navigation.dart';
+
 class TopPage extends StatefulWidget {
   const TopPage({Key? key}) : super(key: key);
 
@@ -64,9 +66,16 @@ class _TopPageState extends State<TopPage> {
                 height: 14,
               ),
               LongButton(
-                  text: 'Logout',
+                  text: 'Get Started',
                   backgroundColor: Colors.transparent,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const BottomNavigation(),
+                      ),
+                    );
+                  },
                   foregroundColor: Colors.white),
             ],
           ),
